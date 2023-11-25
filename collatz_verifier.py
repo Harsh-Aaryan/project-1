@@ -29,20 +29,27 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
     def collatz_verifier_optimized(nums):
     sequences = []
     cache = {}
-    for num in nums:
+    
+    def collatz_sequence(num):
+        if num in cache:
+            return cache[num]
+
         sequence = [num]
         while num != 1:
-            if num in cache:
-                num = cache[num]
+            if num % 2 == 0:
+                num //= 2
             else:
-                if num % 2 == 0:
-                    num //= 2
-                else:
-                    num = 3 * num + 1
-                cache[num] = num
+                num = 3 * num + 1
             sequence.append(num)
-        sequences.append(sequence)
+
+        cache[sequence[0]] = sequence  # Cache the entire sequence
+        return sequence
+
+    for num in nums:
+        sequences.append(collatz_sequence(num))
+
     return str(sequences)
+
     pass
 
     # <<<<<
