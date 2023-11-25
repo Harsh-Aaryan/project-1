@@ -27,15 +27,16 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
 
     # Your code goes here >>>>>
    
+    
     sequences = []
     cache = {}
-    for num in 1:
+
+    for num in l:
         sequence = [num]
         while num != 1:
             if num in cache:
                 num = cache[num]
             else:
-                #
                 if num % 2 == 0:
                     num //= 2
                 else:
