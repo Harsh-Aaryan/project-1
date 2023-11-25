@@ -26,6 +26,23 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
     # Type 'f' or 'r' to finish/return a function call and go back to caller
 
     # Your code goes here >>>>>
+    def collatz_verifier_optimized(nums):
+    sequences = []
+    cache = {}
+    for num in nums:
+        sequence = [num]
+        while num != 1:
+            if num in cache:
+                num = cache[num]
+            else:
+                if num % 2 == 0:
+                    num //= 2
+                else:
+                    num = 3 * num + 1
+                cache[num] = num
+            sequence.append(num)
+        sequences.append(sequence)
+    return str(sequences)
     pass
 
     # <<<<<
