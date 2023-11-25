@@ -35,6 +35,7 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
             if num in cache:
                 num = cache[num]
             else:
+                #
                 if num % 2 == 0:
                     num //= 2
                 else:
