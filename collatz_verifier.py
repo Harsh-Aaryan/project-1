@@ -26,8 +26,7 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
     # Type 'f' or 'r' to finish/return a function call and go back to caller
 
     # Your code goes here >>>>>
-   
-    
+
     sequences = []
     cache = {}
 
@@ -45,9 +44,6 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
             sequence.append(num)
         sequences.append(sequence)
     return sequences
-
-
-    
 
     # <<<<<
 
