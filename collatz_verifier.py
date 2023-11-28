@@ -27,8 +27,10 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
 
     # Your code goes here >>>>>
 
+    def collatz_verifier(list):
     outList = []
-    for num in lst:
+    for i in range(len(list)):
+        num = list[i]
         subList = []
         while num != 1:
             subList.append(num)
@@ -38,6 +40,7 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
                 num = num // 2
         subList.append(num)
         outList.append(subList)
+    return outList
 
     # <<<<<
 
