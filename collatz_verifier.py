@@ -26,24 +26,19 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
     # Type 'f' or 'r' to finish/return a function call and go back to caller
 
     # Your code goes here >>>>>
-
-    sequences = []
-    cache = {}
-
-    for num in l:
-        sequence = [num]
+outList = []
+    for i in range(len(list)):
+        num = list[i]
+        subList = []
         while num != 1:
-            if num in cache:
-                num = cache[num]
+            subList.append(num)
+            if num % 2:
+                num = (num * 3) + 1
             else:
-                if num % 2 == 0:
-                    num //= 2
-                else:
-                    num = 3 * num + 1
-                cache[num] = num
-            sequence.append(num)
-        sequences.append(sequence)
-    return sequences
+                num = num // 2
+        subList.append(num)
+        outList.append(subList)
+    return outList
 
     # <<<<<
 
