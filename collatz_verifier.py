@@ -43,6 +43,7 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
             sequence.append(num)
         cache[sequence[0]] = sequence[1:]
         sequences.append(sequence)
+
     return sequences
 
     # <<<<<
