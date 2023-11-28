@@ -28,22 +28,21 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
     # Your code goes here >>>>>
 
     sequences = []
-    cache: Dict[int, List[int]] = {}
+    cache = {}
 
-    for num in nums:
+    for num in l:
         sequence = [num]
         while num != 1:
             if num in cache:
-                sequence.extend(cache[num])
-                break
-            elif num % 2 == 0:
-                num //= 2
+                num = cache[num]
             else:
-                num = 3 * num + 1
+                if num % 2 == 0:
+                    num //= 2
+                else:
+                    num = 3 * num + 1
+                cache[num] = num
             sequence.append(num)
-        cache[sequence[0]] = sequence[1:]
         sequences.append(sequence)
-
     return sequences
 
     # <<<<<
