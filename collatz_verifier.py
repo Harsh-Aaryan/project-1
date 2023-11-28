@@ -26,7 +26,8 @@ def collatz_verifier(l: list[int]) -> list[list[int]]:
     # Type 'f' or 'r' to finish/return a function call and go back to caller
 
     # Your code goes here >>>>>
-outList = []
+    def collatz_verifier(list):
+    outList = []
     for i in range(len(list)):
         num = list[i]
         subList = []
