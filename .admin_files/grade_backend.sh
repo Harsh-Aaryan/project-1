@@ -577,9 +577,9 @@ doctest_tests() {
 
         echo "Running command: $ $MAGENTA $doctest_command $RESET"
         if $doctest_command &>/dev/null; then
-            grade_update "Doctests in function docstring" 100 100 0
+            grade_update "Doctests in function docstring" 270 270 0
         else
-            grade_update "Doctests in function docstring" 0 0 0
+            grade_update "Doctests in function docstring" 0 270 0
             # https://stackoverflow.com/questions/20010199/how-to-determine-if-a-process-runs-inside-lxc-docker#20012536
             if [ "$annoying_nodebug" = "g" ] || grep 'docker\|lxc' /proc/1/cgroup >/dev/null 2>&1; then
                 :

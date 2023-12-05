@@ -21,7 +21,7 @@ language="python"
 # For C or C++, this is cppcheck.
 # For Bash, this is shellcheck
 # Not needed at all with rust's awesome compiler!
-enable_static_analysis=true
+enable_static_analysis=false
 
 # Whether or not to score the student using an autoformatter (dock points
 # if not formatted correctly).
@@ -29,7 +29,7 @@ enable_static_analysis=true
 # For C++, this is clang-format.
 # For Bash, this is shfmt
 # For Rust, this is rustfmt
-enable_format_check=true
+enable_format_check=false
 
 # Whether or not to use fuzzy or ridig diffs
 # If you choose true, fuzzy diffs will give partial credit.
@@ -38,7 +38,7 @@ enable_format_check=true
 # If you choose false, rigid diffs will be all-or-none.
 # This is helpful when the assignment is mathy,
 # where correctness is not reasonable to estimate statistically.
-fuzzy_partial_credit=true
+fuzzy_partial_credit=false
 
 # The timeout duration in seconds for killing a student process.
 # This can limit infinite run-times.
